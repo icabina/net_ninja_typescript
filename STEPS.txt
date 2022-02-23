@@ -1,6 +1,15 @@
 1. npm i -g typescript (on computer)
-
+____________________________________
 
 2. tsc sandbox.ts -w (persistent / nodemon)
-
+____________________________________
 3. tsc --init
+____________________________________
+4. Work with modules,
+tsconfig.json
+"target": "es6",
+"module": "es2015",
+
+index.html
+<script type="module"src="app.js" ></script>
+____________________________________
