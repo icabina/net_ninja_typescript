@@ -1,0 +1,6 @@
+1. npm i -g typescript (on computer)
+
+
+2. tsc sandbox.ts -w (persistent / nodemon)
+
+3. tsc --init
