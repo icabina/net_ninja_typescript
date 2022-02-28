@@ -4,6 +4,7 @@ import { ListTemplate } from "./classes/ListTemplate.js";
  import { HasFormatter } from "./interfaces/HasFormatter.js";
 import {enums} from './enums.js'
 import {generics} from './generics.js'
+import {tuples} from './tuples.js'
 
 
  let docOne: HasFormatter; //type HasFormatter
@@ -67,11 +68,18 @@ const amount = document.querySelector('#amount') as HTMLInputElement;
 form.addEventListener('submit', (e: Event)=>{
   e.preventDefault();
 
+
+  //TUPLE
+let values: [string, string, number]
+values = [tofrom.value, details.value, amount.valueAsNumber];
+   
   //CHECK IF IS PAYMENT O INVOICE
   let doc: HasFormatter;
   if(type.value === "invoice"){
     //create a new invoice and store it in doc
-    doc = new Invoice( tofrom.value, details.value, amount.valueAsNumber )
+
+    //doc = new Invoice( tofrom.value, details.value, amount.valueAsNumber )
+    doc = new Invoice(...values)
   }else{
     doc = new Payment( tofrom.value, details.value, amount.valueAsNumber )
   }

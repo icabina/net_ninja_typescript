@@ -13,3 +13,5 @@ tsconfig.json
 index.html
 <script type="module"src="app.js" ></script>
 ____________________________________
+
+typescript.org/docs/

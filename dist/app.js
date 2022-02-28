@@ -45,11 +45,15 @@ const list = new ListTemplate(ul);
 // =====================================
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    //TUPLE
+    let values;
+    values = [tofrom.value, details.value, amount.valueAsNumber];
     //CHECK IF IS PAYMENT O INVOICE
     let doc;
     if (type.value === "invoice") {
         //create a new invoice and store it in doc
-        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+        //doc = new Invoice( tofrom.value, details.value, amount.valueAsNumber )
+        doc = new Invoice(...values);
     }
     else {
         doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
